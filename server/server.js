@@ -11,10 +11,11 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 
-app.use(require('./routes/usuario'))
-
 // parse application/json
 app.use(bodyParser.json())
+
+//Configuracion global de rutas
+app.use(require('./routes/index'))
 
 mongoose.connect(process.env.URLDB, {
         useNewUrlParser: true,
